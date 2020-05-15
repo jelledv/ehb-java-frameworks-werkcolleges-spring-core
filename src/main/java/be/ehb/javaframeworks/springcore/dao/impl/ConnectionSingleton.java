@@ -1,10 +1,10 @@
-package be.ehb.javaframeworks.springcore.dao;
+package be.ehb.javaframeworks.springcore.dao.impl;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import static be.ehb.javaframeworks.springcore.dao.DatabaseProperties.*;
+import static be.ehb.javaframeworks.springcore.dao.impl.DatabaseProperties.*;
 
 class ConnectionSingleton {
 

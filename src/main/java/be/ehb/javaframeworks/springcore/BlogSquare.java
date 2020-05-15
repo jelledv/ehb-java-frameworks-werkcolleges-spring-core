@@ -2,13 +2,19 @@ package be.ehb.javaframeworks.springcore;
 
 import be.ehb.javaframeworks.springcore.dto.BlogPost;
 import be.ehb.javaframeworks.springcore.dto.User;
-import be.ehb.javaframeworks.springcore.service.BlogService;
-import be.ehb.javaframeworks.springcore.service.UserService;
+import be.ehb.javaframeworks.springcore.service.api.BlogService;
+import be.ehb.javaframeworks.springcore.service.api.UserService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@ComponentScan
+@Configuration
 public class BlogSquare {
 
     private static final Logger LOGGER = Logger.getLogger(BlogSquare.class.getSimpleName());
@@ -16,14 +22,15 @@ public class BlogSquare {
     private static BlogService blogService;
     private static UserService userService;
 
-    private static void initialize() {
-        blogService = new BlogService();
-        userService = new UserService();
+    private static void getBeans(ApplicationContext applicationContext) {
+        blogService = applicationContext.getBean(BlogService.class);
+        userService = applicationContext.getBean(UserService.class);
     }
 
     public static void main(String[] args) throws Exception {
         LOGGER.log(Level.INFO, "Starting application");
-        initialize();
+        ApplicationContext context = new AnnotationConfigApplicationContext(BlogSquare.class);
+        getBeans(context);
 
         User user1 = new User(1, "Jan Parlo", "jan.parlo@gmail.com");
         User user2 = new User(2, "Erik Meier", "erik.meier@gmail.com");

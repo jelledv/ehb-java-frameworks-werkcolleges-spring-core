@@ -1,15 +1,18 @@
-package be.ehb.javaframeworks.springcore.dao;
+package be.ehb.javaframeworks.springcore.dao.impl;
 
+import be.ehb.javaframeworks.springcore.dao.api.BlogCommentDao;
 import be.ehb.javaframeworks.springcore.dto.BlogComment;
 import be.ehb.javaframeworks.springcore.dto.BlogPost;
 import be.ehb.javaframeworks.springcore.dto.User;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class BlogCommentDao implements AbstractDao<BlogComment> {
+@Component
+public class BlogCommentDaoImpl implements BlogCommentDao {
 
     @Override
     public void save(BlogComment entity) throws SQLException {

@@ -1,4 +1,4 @@
-package be.ehb.javaframeworks.springcore.dao;
+package be.ehb.javaframeworks.springcore.dao.impl;
 
 class DatabaseProperties {
     static final String URL = "jdbc:mysql://dt5.ehb.be";

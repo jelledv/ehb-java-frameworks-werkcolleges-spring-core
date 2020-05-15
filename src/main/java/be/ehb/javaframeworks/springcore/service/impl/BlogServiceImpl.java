@@ -1,23 +1,28 @@
-package be.ehb.javaframeworks.springcore.service;
+package be.ehb.javaframeworks.springcore.service.impl;
 
-import be.ehb.javaframeworks.springcore.dao.BlogCommentDao;
-import be.ehb.javaframeworks.springcore.dao.BlogPostDao;
+import be.ehb.javaframeworks.springcore.dao.api.BlogCommentDao;
+import be.ehb.javaframeworks.springcore.dao.api.BlogPostDao;
 import be.ehb.javaframeworks.springcore.dto.BlogComment;
 import be.ehb.javaframeworks.springcore.dto.BlogPost;
 import be.ehb.javaframeworks.springcore.dto.User;
+import be.ehb.javaframeworks.springcore.service.api.BlogService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class BlogService {
+@Component
+public class BlogServiceImpl implements BlogService {
 
     private final BlogPostDao blogPostDao;
     private final BlogCommentDao blogCommentDao;
 
-    public BlogService() {
-        blogPostDao = new BlogPostDao();
-        blogCommentDao = new BlogCommentDao();
+    @Autowired
+    public BlogServiceImpl(BlogPostDao blogPostDao, BlogCommentDao blogCommentDao) {
+        this.blogPostDao = blogPostDao;
+        this.blogCommentDao = blogCommentDao;
     }
 
     public List<BlogPost> getAllBlogPosts() throws SQLException {

@@ -1,13 +1,16 @@
-package be.ehb.javaframeworks.springcore.dao;
+package be.ehb.javaframeworks.springcore.dao.impl;
 
+import be.ehb.javaframeworks.springcore.dao.api.UserDao;
 import be.ehb.javaframeworks.springcore.dto.User;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class UserDao implements AbstractDao<User> {
+@Component
+public class UserDaoImpl implements UserDao {
 
     @Override
     public void save(User entity) throws SQLException {
