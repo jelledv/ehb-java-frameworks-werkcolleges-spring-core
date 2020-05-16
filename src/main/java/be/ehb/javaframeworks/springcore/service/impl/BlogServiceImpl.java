@@ -6,11 +6,13 @@ import be.ehb.javaframeworks.springcore.dto.BlogComment;
 import be.ehb.javaframeworks.springcore.dto.BlogPost;
 import be.ehb.javaframeworks.springcore.dto.User;
 import be.ehb.javaframeworks.springcore.service.api.BlogService;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class BlogServiceImpl implements BlogService {
 
     private final BlogPostDao blogPostDao;

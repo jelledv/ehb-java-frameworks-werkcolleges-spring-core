@@ -3,11 +3,13 @@ package be.ehb.javaframeworks.springcore.service.impl;
 import be.ehb.javaframeworks.springcore.dao.api.UserDao;
 import be.ehb.javaframeworks.springcore.dto.User;
 import be.ehb.javaframeworks.springcore.service.api.UserService;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     private final UserDao userDao;

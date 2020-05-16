@@ -2,12 +2,14 @@ package be.ehb.javaframeworks.springcore.dao.impl;
 
 import be.ehb.javaframeworks.springcore.dao.api.BlogPostDao;
 import be.ehb.javaframeworks.springcore.dto.BlogPost;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Repository
 public class BlogPostDaoImpl implements BlogPostDao {
 
     @Override
