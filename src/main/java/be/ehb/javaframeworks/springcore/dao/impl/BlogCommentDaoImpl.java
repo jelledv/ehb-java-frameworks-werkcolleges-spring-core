@@ -4,14 +4,12 @@ import be.ehb.javaframeworks.springcore.dao.api.BlogCommentDao;
 import be.ehb.javaframeworks.springcore.dto.BlogComment;
 import be.ehb.javaframeworks.springcore.dto.BlogPost;
 import be.ehb.javaframeworks.springcore.dto.User;
-import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Component
 public class BlogCommentDaoImpl implements BlogCommentDao {
 
     @Override

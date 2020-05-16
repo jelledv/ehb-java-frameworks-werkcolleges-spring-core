@@ -2,14 +2,12 @@ package be.ehb.javaframeworks.springcore.dao.impl;
 
 import be.ehb.javaframeworks.springcore.dao.api.UserDao;
 import be.ehb.javaframeworks.springcore.dto.User;
-import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Component
 public class UserDaoImpl implements UserDao {
 
     @Override

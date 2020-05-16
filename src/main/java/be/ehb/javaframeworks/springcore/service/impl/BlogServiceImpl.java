@@ -6,20 +6,16 @@ import be.ehb.javaframeworks.springcore.dto.BlogComment;
 import be.ehb.javaframeworks.springcore.dto.BlogPost;
 import be.ehb.javaframeworks.springcore.dto.User;
 import be.ehb.javaframeworks.springcore.service.api.BlogService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
 public class BlogServiceImpl implements BlogService {
 
     private final BlogPostDao blogPostDao;
     private final BlogCommentDao blogCommentDao;
 
-    @Autowired
     public BlogServiceImpl(BlogPostDao blogPostDao, BlogCommentDao blogCommentDao) {
         this.blogPostDao = blogPostDao;
         this.blogCommentDao = blogCommentDao;
